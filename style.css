@@ -13,6 +13,7 @@
     left: 0;
     width: 100%;
     padding: 30px 5px;
+    /* background: seagreen; */
     background: transparent;
     display: flex;
     align-items: center;
@@ -76,6 +77,11 @@
     height: 100%;
     object-fit: cover;
     pointer-events: none;
+    opacity: 0;
+    transition: .3s ease;
+}
+.slide.active img {
+    opacity: 1;
 }
 .slide .left-info {
     position: absolute;
@@ -83,6 +89,13 @@
     left: 0;
     width: 50%;
     height: 100%;
+    transform: translateX(-100%);
+    transition: 0s;
+}
+.slide.active .left-info {
+    transform: translateX(0);
+    z-index: 1;
+    transition: 5s ease;
 }
 .left-info .penetrate-blur {
     /* position: absolute; */
